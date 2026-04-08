@@ -3,6 +3,7 @@ import React from "react";
 import Header from "@/components/Layout/Header";
 import ScrollObserver from "../components/Layout/inc/ScrollObserver";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "@/styles/app.scss";
 import Script from "next/script";
@@ -53,6 +54,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                 <main>{children}</main>
 
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
