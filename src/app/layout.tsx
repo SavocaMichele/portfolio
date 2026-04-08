@@ -4,13 +4,50 @@ import Header from "@/components/Layout/Header";
 import ScrollObserver from "../components/Layout/inc/ScrollObserver";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from "next/script";
+import {
+    siteDescription,
+    siteName,
+    siteTitle,
+    siteUrlObject,
+    socialImageAlt,
+    socialImagePath,
+} from "@/config/site";
 
 import "@/styles/app.scss";
-import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Michele Savoca | Web Developer",
-    description: "Personal portfolio of Michele Savoca, a passionate web developer specializing in React, Next.js and Laravel. Explore my projects, skills, and experience in building modern web applications.",
+    metadataBase: siteUrlObject,
+    title: siteTitle,
+    description: siteDescription,
+    alternates: {
+        canonical: "/",
+    },
+    openGraph: {
+        title: siteTitle,
+        description: siteDescription,
+        url: "/",
+        siteName,
+        type: "website",
+        locale: "en_US",
+        images: [
+            {
+                url: socialImagePath,
+                alt: socialImageAlt,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: siteTitle,
+        description: siteDescription,
+        images: [
+            {
+                url: socialImagePath,
+                alt: socialImageAlt,
+            },
+        ],
+    },
 };
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
@@ -20,7 +57,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                 <script type="application/javascript" dangerouslySetInnerHTML={{
                     __html: `
                         document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');
-                    
+
                         (function () {
                             const appearance = localStorage.getItem("appearance") || "system";
                             const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -40,7 +77,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                 <Script id="theme-init" strategy="beforeInteractive">
                     {`
                         const theme = localStorage.getItem('theme');
-                      
+
                         if (theme === 'dark') {
                             document.documentElement.classList.add('dark');
                         }
