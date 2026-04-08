@@ -1,17 +1,7 @@
 const FALLBACK_SITE_URL = "https://www.msavoca.dev";
 
 const normalizeSiteUrl = (value?: string) => {
-    const trimmedValue = value?.trim();
-
-    if (!trimmedValue) {
-        return FALLBACK_SITE_URL;
-    }
-
-    if (/^https?:\/\//i.test(trimmedValue)) {
-        return trimmedValue;
-    }
-
-    return `https://${trimmedValue}`;
+    return FALLBACK_SITE_URL;
 };
 
 export const siteName = "Portfolio";
