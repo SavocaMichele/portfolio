@@ -22,6 +22,13 @@ html.js .animate-on-scroll.is-visible {
     &.animation-fade-right-scroll { animation: fade-right 0.6s forwards; }
 }
 
+html.js {
+    .animation-fade-up { animation: fade-up 0.6s forwards; }
+    .animation-fade-up-large { animation: fade-up-large 0.6s forwards; }
+    .animation-fade-left { animation: fade-left 0.6s forwards; }
+    .animation-fade-right { animation: fade-right 0.6s forwards; }
+}
+
 // Keyframes
 @keyframes fade-up {
     0% { opacity: 0; transform: translateY(20px); }
