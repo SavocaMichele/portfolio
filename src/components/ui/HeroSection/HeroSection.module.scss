@@ -1,0 +1,32 @@
+@use "@/styles/breakpoints" as *;
+
+.HeroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px var(--ui-inset-lg);
+
+    @include respond(mobile) {
+        padding: 60px var(--ui-inset-md);
+    }
+
+    // Variants
+    &.--variant-spark {
+        background: var(--ui-color-background-primary);
+    }
+    &.--variant-edge {
+        background: var(--ui-color-background-secondary);
+    }
+
+    &.--align-center {
+        justify-content: center;
+    }
+
+
+    .Content {
+        max-width: 1120px;
+        width: 100%;
+    }
+}

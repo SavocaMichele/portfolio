@@ -1,0 +1,55 @@
+.Button,
+.IconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ui-inset-sm);
+    font-family: var(--ui-font-body);
+    font-size: var(--ui-font-size-md);
+    color: var(--ui-font-color-inverted);
+    background-color: var(--ui-glass-black-90);
+    border: none;
+    border-radius: var(--ui-border-radius-full);
+    height: 48px;
+    padding: 0 var(--ui-inset-md);
+    cursor: pointer;
+    transition: all var(--ui-transition-fast);
+    flex-shrink: 0;
+
+    &:hover,
+    &:focus {
+        background-color: var(--ui-glass-black-80);
+        transition: all var(--ui-transition-fast);
+        outline: none;
+    }
+
+    .Spinner {
+        width: 15px;
+        height: 15px;
+        border: 2px solid currentColor;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    &.--disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &.--width-full {
+        width: 100%;
+    }
+}

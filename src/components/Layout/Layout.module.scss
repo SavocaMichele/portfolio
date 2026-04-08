@@ -1,0 +1,72 @@
+@use "@/styles/breakpoints" as *;
+
+.Header {
+    position: fixed;
+    z-index: 1000;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+
+    .Navigation {
+        margin: 0 auto;
+        width: 80%;
+        max-width: 1120px;
+        background-color: var(--ui-glass-70);
+        border: 1px solid var(--ui-glass-50);
+        height: 62px;
+        border-radius: var(--ui-border-radius-full);
+        box-shadow: var(--ui-shadow-md);
+        padding: 0 var(--ui-inset-md);
+        backdrop-filter: var(--ui-filter-blur-lg);
+
+        @include respond(mobile) {
+            width: 100%;
+        }
+
+        .Link {
+            transition: all var(--ui-transition-fast);
+
+            &:hover,
+            &:focus {
+                outline: none;
+                color: var(--ui-font-color-secondary);
+            }
+
+            &.--active,
+            &[aria-current="location"] {
+                color: var(--ui-font-color-secondary);
+            }
+        }
+
+        .MobileMenu {
+            display: none;
+        }
+
+
+        @include respond(mobile) {
+            .Desktop {
+                display: none;
+            }
+
+            .MobileMenu {
+                display: block;
+            }
+        }
+    }
+
+    .Appearance {
+        cursor: pointer;
+        height: 36px;
+        width: 36px;
+        border-radius: var(--ui-border-radius-full);
+        border: none;
+        background-color: var(--ui-glass-50);
+        padding: 10px;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: var(--ui-glass-60);
+        }
+    }
+}

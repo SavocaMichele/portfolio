@@ -1,0 +1,39 @@
+@use "@/styles/breakpoints" as *;
+
+.Grid {
+    display: grid;
+    grid-template-columns: var(--grid-template-columns, 1fr);
+
+    @include respond(mobile) {
+        grid-template-columns: 1fr;
+    }
+
+    // Gaps
+    &.--gap-xs {
+        gap: var(--ui-inset-xs);
+    }
+    &.--gap-sm {
+        gap: var(--ui-inset-sm);
+    }
+    &.--gap-md {
+        gap: var(--ui-inset-md);
+    }
+    &.--gap-lg {
+        gap: var(--ui-inset-lg);
+    }
+    &.--gap-xl {
+        gap: var(--ui-inset-xl);
+    }
+
+
+    // Width
+    &.--width-auto {
+        width: auto;
+    }
+    &.--width-full {
+        width: 100%;
+    }
+    &.--width-grow {
+        flex-grow: 1;
+    }
+}

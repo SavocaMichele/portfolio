@@ -1,0 +1,44 @@
+.Icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: currentColor;
+    stroke: currentColor;
+
+    svg, path {
+        width: 100%;
+        height: 100%;
+    }
+
+    // Sizes
+    &.--size-xs {
+        width: 14px;
+        height: 14px;
+    }
+    &.--size-sm {
+        width: 16px;
+        height: 16px;
+    }
+    &.--size-lg {
+        width: 24px;
+        height: 24px;
+    }
+
+    // Colors
+    &.--color-primary {
+        color: var(--ui-font-color-primary);
+    }
+    &.--color-secondary {
+        color: var(--ui-font-color-secondary);
+    }
+    &.--color-tertiary {
+        color: var(--ui-font-color-tertiary);
+    }
+    &.--color-inverted {
+        color: var(--ui-font-color-inverted);
+    }
+    &.--color-light {
+        color: var(--ui-font-color-light);
+    }
+}
