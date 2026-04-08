@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     metadataBase: siteUrlObject,
     title: siteTitle,
     description: siteDescription,
+    manifest: "/site.webmanifest",
     alternates: {
         canonical: "/",
     },
@@ -48,15 +49,17 @@ export const metadata: Metadata = {
             },
         ],
     },
+    appleWebApp: {
+        capable: true,
+        title: "Michele Savoca | Portfolio",
+        statusBarStyle: "black-translucent",
+    },
 };
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className={"no-js"} suppressHydrationWarning>
             <head>
-                <meta name="apple-mobile-web-app-title" content="Portoflio" />
-                <link rel="manifest" href="/site.webmanifest?v=20260408" />
-
                 <script type="application/javascript" dangerouslySetInnerHTML={{
                     __html: `
                         document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');
