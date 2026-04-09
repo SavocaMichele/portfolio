@@ -3,7 +3,7 @@
         "name"              : "Modern Weather App",
         "description"       : "A weather application built with React and TypeScript, utilizing the OpenWeather API to provide real-time weather updates. It includes a 7-day forecast, location-based news, and customizable themes for a better user experience.",
         "image"             : "/img/react-weather-app.png",
-        "live"              : "",
+        "live"              : "https://weather.msavoca.dev",
         "github"            : "https://github.com/SavocaMichele/react-weather",
         "stack"             : ["React", "Typescript", "SQLite", "OpenWeather API"],
         "category"          : "Design & Development (1-Week Challenge)"
